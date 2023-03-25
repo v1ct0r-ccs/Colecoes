@@ -1,5 +1,4 @@
-package Tarefa_Colecoes;
-import java.util.Objects;
+package TarefaColecoes;
 
 public class Alunos implements Comparable<Alunos>{
     private String nome;

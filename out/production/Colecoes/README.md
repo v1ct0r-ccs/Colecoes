@@ -62,3 +62,47 @@
 - **TreSet**: Sua principal característica é que ele é o único Set que implementa a interface `SortedSet` em vez de `Set` diretamente, mas de qualquer forma SortedSet implementa Set, assim continuamos tendo os mesmos métodos no *TreSet*. Pelo fato de ele implementar *SortedSet* ele possui elementos ordenados automaticamente, ou seja, independente da ordem que voc<è inserir os elementos, eles serão ordenados. Mas isso tem um custo, a complexidade para os métodos *add*, *remove* e *contains* são bem maiores que do *HashSet, são elas `O(log(n))`, não é bem uma complexidade exponencial mas é bem maior que `O(1)` que tem seu tempo inalterado.
 
 - **LinkedHashSet**: É um meio termo entre *HashSet* e *TreeSet*, ou seja, ela nos proporciona um pouco da performance do *HashSet* e um pouco do poder de ordenação do *TreeSet*. O *LinkedHashet* faz uso também do `HashTable` com *linked list*, ou seja, temos aui a seguinte situação: Os elementos continuam na ordem que são inseridos, diferente do *HashSet que "embaralha" tudo.
+
+## Array
+
+OS *arrays* ou matrizes, como são conhecidos pelo *Java*, fazem parte do pacote `java.until` na coleção *API* do *Java*. São objetos de recipientes que contém um número fixo de valores de um único tipo. O comprimento de um array é estabelecido quando criado, sendo que após a criação o seu comprimento fica fixo.
+
+Cada item em um array é chamado de elemento, e cada elemento é acessado pelo número, o índice. Abaixo é mostrado se dá esse acesso aos seus elementos, lembrando que sempre sua numeração começa em 0.
+
+*Exemplo*:
+- | 3 | 5 | 8 | 9 | 7 | - valores array
+- | 0 | 1 | 2 | 3 | 4 | - índice array
+
+### Array bidimncional
+
+Esse tipo de *array* é declarado como tendo duas dimenções e é usado para representar tabelas de valores que consistem em informações organizadas em linhas e colunas.
+
+Os *arrays bidimensionais precisam de dois índices para identificar um elemento particular.
+
+Por exemplo, quando um array é identificado dessa forma `numero[indiceA][indiceB]`, a varíavelnumero é o array, o *indiceA* é a linha e o *indiceB* é identificadi como a coluna, fazendo uma identificação de cada elemento no *array* por número de linha e coluna.
+
+*Exemplo*
+
+- |a[0][0]| |a[0][1]| |a[0][2]| ··· |a[0][n]|
+- |a[1][0]| |a[1][1]| |a[1][2]| ··· |a[1][n]|
+- |a[2][0]| |a[2][1]| |a[2][2]| ··· |a[2][n]|
+- 
+- |a[m][0]| |a[m][1]| |a[m][2]| ··· |a[m][n]|
+
+    - **a** - Nome do array
+    - **[m]** - Índice da linha
+    - **[n]** - ïndice da coluna
+
+## Map
+
+### Implementações - Map
+
+- **HashMap**: baseada em tabela de espalhamento, permite chaves e voleres *null*. Não existe garantia que os dados ficarão ordenados. Escolha esta implemntação se a ordenação não for importante e desejar uma estrutura onde seja necessário um `ID`(identificador).
+
+*Exemplo de aplicação*: Um exemplo de aplicaçã0 é o cátalogo da biblioteca pessoal, onde a chave poderia ser o `ISBN` (*International Standard Book Number*);
+
+- **TreeMap**: Implementa a interface `SortedMap`. Há garantia que o mapa estará classificado em ordem ascendente das chaves. Mas existe a opção de especificar uma ordem diferente. Use esta implementação para um maapa ordenado. Aplicação semenlhante a `HashMap`, com a difernça que `TreeMap` perde no quesito desempenho;
+
+- **LinkedHashMap**: Mantém uma lista duplamente ligada através de seus itens. A ordem de iteração é a ordem em que as chaves são inseridas nno mapa. Se for necessário um mapa onde os elementos são iterados na ordem em que foram inseridos, use esta implemntação.
+
+*Exemplo de aplicação*: O registro dos corredores de uma maratona, onde a chave seria o número que cada um recebe no ato da inscrição, é um exemplo de aplicação desta coleção.

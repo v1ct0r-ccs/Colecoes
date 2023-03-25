@@ -1,4 +1,4 @@
-package Tarefa_Colecoes;
+package TarefaColecoes;
 
 import java.util.ArrayList;
 import java.util.Collections;
